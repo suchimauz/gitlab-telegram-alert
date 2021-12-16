@@ -55,7 +55,7 @@ notify_error:
       when: on_failure
 ```
 
-Don't forget to add your stage to the stages section:
+Don't forget to add your <stage> to the **stages** section:
 
 ```Yaml
 variables: 
