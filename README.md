@@ -3,14 +3,15 @@ Docker image for send gitlab ci/cd build results to telegram chat
 
 ## Usage
 
-Set global environment variables in .gitlab-ci.yml:
+Set global environment variables in **.gitlab-ci.yml**:
 
 ```Yaml
 variables:
   # ... some variables
-  PARSE_MODE: 'Markdown' # Support HTML, default: Markdown
-  CHAT_ID: $CHAT_ID      # Set CHAT_ID repository secret
-  BOT_TOKEN: $BOT_TOKEN  # Set BOT_TOKEN repository secret
+  PARSE_MODE: 'Markdown'       # Support HTML, default: Markdown
+  CHAT_ID: $CHAT_ID            # Set CHAT_ID repository secret
+  BOT_TOKEN: $BOT_TOKEN        # Set BOT_TOKEN repository secret
+  DISABLE_NOTIFICATION: True   # Default = False
 ```
 
 Job for notify success build:
@@ -20,6 +21,7 @@ notify_success:
   stage: <stage>
   image: suchimauz/gitlab-telegram-alert:v1.0.0
   variables:
+    # For off pulling repository
     GIT_STRATEGY: none
     MESSAGE: |
       ✅ Success build \*$CI_PROJECT_NAME:$CI_COMMIT_BRANCH\*
@@ -41,6 +43,7 @@ notify_error:
   stage: <stage>
   image: suchimauz/gitlab-telegram-alert:v1.0.0
   variables:
+    # For off pulling repository
     GIT_STRATEGY: none
     MESSAGE: |
       ❌ Error build \*$CI_PROJECT_NAME:$CI_COMMIT_BRANCH\*
