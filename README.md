@@ -77,3 +77,16 @@ notify_error:
 ```
 
 Also you can customize your message as you like using environments from gitlab ci/cd: https://docs.gitlab.com/ee/ci/variables/
+  
+## Success build
+✅ Success build **repository:branch**
+<br>Commit message
+<br><br>Commit by: **username \<email@email.com\>**
+<br>[https://gitlab.com/uri_to_pipeline](https://gitlab.com/uri_to_pipeline)
+  
+
+## Error build
+❌ Error build **repository:branch**
+<br>Commit message
+<br><br>Commit by: **username \<email@email.com\>**
+<br>[https://gitlab.com/uri_to_pipeline](https://gitlab.com/uri_to_pipeline)
