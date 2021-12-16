@@ -1,5 +1,5 @@
 # Gitlab Telegram Alert
-Docker image for send gitlab ci/cd build results to telegram chat
+Docker image for send gitlab ci/cd build results to telegram chat with bot
 
 ## Usage
 
